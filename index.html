@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Modern Awards</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F2F2F2; /* Very Light Grey */
+        }
+        
+        .tab-nav {
+            display: flex;
+            padding: 0 0.5rem; /* Small side padding for the nav bar */
+            z-index: 10;
+        }
+
+        .tab-button {
+            /* General styling for all buttons to mimic the image */
+            padding: 0.75rem 1rem;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            margin-right: 0.25rem; 
+            border: 1px solid #532A8C; /* Reduced from 2px to 1px to match content container */
+            color: #532A8C; /* Purple text for inactive tabs */
+            background-color: #F2F2F2; /* Light background for inactive tabs */
+            z-index: 10;
+            position: relative;
+            transition: all 0.3s ease;
+            text-align: center;
+            flex-grow: 1;
+            border-bottom: none; /* Crucial: no bottom border for inactive tabs */
+            white-space: nowrap; 
+        }
+        
+        .tab-button.active {
+            /* Active state: Solid purple, white text, and visually connects to the content box */
+            background-color: #532A8C; 
+            color: white; 
+            border-color: #532A8C;
+            border-bottom-color: #532A8C; /* Will be covered by the content box, simulating flush connection */
+        }
+
+        /* Wrapper for content: Reduced to a "pencil line" border with no green background */
+        .content-container {
+            border: 1px solid #532A8C; /* Pencil line border (1px) */
+            border-radius: 0.75rem; /* Rounded corners for the whole content box */
+            background-color: white; /* Changed from green to white/body color to remove the green background area */
+            margin-top: -2px; /* Overlap the tab row to hide the bottom border of the active tab */
+            z-index: 5;
+            position: relative;
+        }
+        /* Inner box to hold the content on a white background. Margin creates the padding inside the container. */
+        .content-inner {
+            background-color: white;
+            padding: 1.5rem; 
+            border-radius: 0.5rem;
+            margin: 1rem; /* Creates the space inside the container border */
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-8 min-h-screen flex items-start justify-center">
+
+    <div id="awards-guide" class="w-full max-w-4xl shadow-2xl">
+        
+        <!-- Tab Navigation (Tabs need to be slightly offset for the look) -->
+        <nav class="tab-nav">
+            <!-- Updated button classes to use custom styling -->
+            <button id="tab-1" class="tab-button active" data-tab-target="content-1">
+                Why This Matters
+            </button>
+            <button id="tab-2" class="tab-button" data-tab-target="content-2">
+                The Rulebook (What is an Award?)
+            </button>
+            <button id="tab-3" class="tab-button" data-tab-target="content-3">
+                Your Award in Action
+            </button>
+            <button id="tab-4" class="tab-button" data-tab-target="content-4">
+                The Benefits to You
+            </button>
+        </nav>
+
+        <!-- Tab Content Container (Now a white area with a 1px purple border) -->
+        <div class="content-container">
+            <div class="content-inner">
+                <!-- Content 1: Why This Matters -->
+                <div id="content-1" class="tab-content active">
+                    <h2 class="text-2xl font-bold text-[#532A8C] mb-4">You Deserve to be Paid Correctly!</h2>
+                    
+                    <!-- Updated to solid background (removed /50) to match other boxes -->
+                    <div class="bg-[#C3ACE8] border-l-4 border-r-4 border-[#532A8C] p-4 rounded-lg mb-6">
+                        <p class="font-semibold text-[#532A8C]">
+                            If you're new to the workforce (especially in the crucial health and community services sector) understanding how your pay and conditions are set is non-negotiable.
+                        </p>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        In Australia, we have a system called <strong>Modern Awards</strong>. These are official legal documents that act as a safety net, guaranteeing the minimum standards for key aspects of your job, including:
+                    </p>
+
+                    <ul class="space-y-3 list-disc pl-5 text-gray-700">
+                        <li>Minimum pay rates (your legal floor)</li>
+                        <li>Hours of work (how long you can be asked to work)</li>
+                        <li>Breaks (rest and meal entitlements)</li>
+                        <li>Overtime and penalties (extra pay for evenings, weekends, or excess hours)</li>
+                        <li>Allowances (e.g., uniforms or travel costs)</li>
+                    </ul>
+                </div>
+
+                <!-- Content 2: The Rulebook (What is an Award?) -->
+                <div id="content-2" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold text-[#532A8C] mb-4">Modern Award: Your Industrial Rulebook </h2>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Think of a Modern Award as the foundational rulebook for your specific job or industry. It exists to ensure fairness and prevent any employer from paying below the legal minimum.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Modern Award: Lilac Background (C3ACE8) with Deep Purple Text (532A8C) -->
+                        <div class="p-5 bg-[#C3ACE8] rounded-lg shadow-md">
+                            <h3 class="font-extrabold text-xl text-[#532A8C] mb-2">Modern Award: The Specifics</h3>
+                            <p class="text-gray-700">Covers minimum pay, classification, allowances, and penalty rates (e.g., weekend rates) for <strong>specific job roles</strong>.</p>
+                            <!-- Changed from text-sm to text-gray-700 (default size) -->
+                            <p class="mt-2 text-gray-700 font-medium">It's tailored to your industry.</p>
+                        </div>
+                        <!-- NES: Muted Purple Background (9D8ABB - a shade darker) changed to C3ACE8 to match -->
+                        <div class="p-5 bg-[#C3ACE8] rounded-lg shadow-md">
+                            <h3 class="font-extrabold text-xl text-[#532A8C] mb-2">NES: The Non-Negotiables</h3>
+                            <p class="text-gray-700">The National Employment Standards (NES) provide basic rights for <strong>ALL workers</strong> in Australia, like paid annual leave, sick leave, and public holidays.</p>
+                            <!-- Changed from text-sm to text-gray-700 (default size) -->
+                            <p class="mt-2 text-gray-700 font-medium">It's for everyone.</p>
+                        </div>
+                    </div>
+
+                    <p class="text-gray-700 leading-relaxed mt-6">
+                        The Modern Award and the NES work together to form the rock-solid foundation of fair work in Australia. You get the minimum basics (NES) plus the industry-specific details (Modern Award).
+                    </p>
+                </div>
+
+                <!-- Content 3: Your Award in Action -->
+                <div id="content-3" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold text-[#532A8C] mb-4">Finding Your Award</h2>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        If you work in our sector, your role will be covered by a specific Modern Award. This document tells you exactly where you sit in the system. For example:
+                    </p>
+
+                    <div class="space-y-4">
+                        <!-- Health Professionals Award (Updated with link and icon) -->
+                        <div class="p-4 border-l-4 border-r-4 border-[#7ABF49] bg-[#96BF78]/50 rounded-lg">
+                            <p class="font-semibold text-[#532A8C] flex items-center">
+                                <a href="https://www.fwc.gov.au/award/MA000160" target="_blank" class="hover:underline flex items-center text-[#532A8C] hover:text-[#532A8C]">
+                                    The Health Professionals and Support Services Award 2020
+                                    <!-- External Link Icon (Inline SVG) -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#532A8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 flex-shrink-0">
+                                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                        <polyline points="15 3 21 3 21 9"></polyline>
+                                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                                    </svg>
+                                </a>
+                            </p>
+                            <p class="text-sm text-gray-700 mt-1">
+                                <strong>Commonly covers roles like:</strong> Dental Assistants, Medical Receptionists, Therapy Support Workers, and administrative roles in clinics/hospitals.
+                            </p>
+                        </div>
+                        <!-- SCHADS Award block removed -->
+                    </div>
+                    
+                    <p class="text-gray-700 leading-relaxed mt-6">
+                        Your specific Award outlines your job <strong>classification level</strong>, which is then used to determine the minimum pay rate appropriate for your experience.
+                    </p>
+                </div>
+
+                <!-- Content 4: The Benefits to You - TICKS UPDATED WITH BOLD SVGs -->
+                <div id="content-4" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold text-[#532A8C] mb-4">The Payoff: Why Knowledge is Power</h2>
+                    
+                    <p class="text-gray-700 leading-relaxed mb-6">
+                        Learning this system is an investment in your career. It helps you shift from being a passive employee to an <strong>informed, confident professional</strong>.
+                    </p>
+
+                    <div class="flex flex-col space-y-4">
+                        <div class="flex items-start">
+                            <!-- Bolder SVG Checkmark for "Protect Yourself" -->
+                            <div class="mr-3 mt-1">
+                                <svg class="w-6 h-6" fill="none" stroke="#532A8C" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Protect Yourself</p>
+                                <p class="text-gray-600 text-sm">Know your legal entitlements (pay, breaks, penalties) and avoid underpayment.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <!-- Bolder SVG Checkmark for "Communicate Confidently" -->
+                            <div class="mr-3 mt-1">
+                                <svg class="w-6 h-6" fill="none" stroke="#532A8C" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Communicate Confidently</p>
+                                <p class="text-gray-600 text-sm">Discuss conditions, shifts, and pay with your employer with authority and clarity.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <!-- Bolder SVG Checkmark for "Support Fairness" -->
+                            <div class="mr-3 mt-1">
+                                <svg class="w-6 h-6" fill="none" stroke="#532A8C" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="font-semibold text-gray-800">Support Fairness</p>
+                                <p class="text-gray-600 text-sm">Recognise when practices don’t seem fair or correct, supporting a workplace culture of compliance and respect.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="mt-8 text-lg font-semibold text-[#532A8C] border-t pt-4">
+                        In short: Understanding the Modern Award System makes you a responsible worker who knows both their rights *and* their responsibilities. Good on ya!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            const switchTab = (targetId) => {
+                // Deactivate all buttons and hide all content
+                tabButtons.forEach(button => button.classList.remove('active'));
+                tabContents.forEach(content => content.classList.add('hidden'));
+
+                // Activate the clicked button
+                const activeButton = document.querySelector(`.tab-button[data-tab-target="${targetId}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+
+                // Show the target content
+                const activeContent = document.getElementById(targetId);
+                if (activeContent) {
+                    activeContent.classList.remove('hidden');
+                }
+            };
+
+            // Set up click listeners
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.getAttribute('data-tab-target');
+                    switchTab(targetId);
+                });
+            });
+
+            // Initial state (ensure first tab is active on load)
+            switchTab('content-1');
+        });
+    </script>
+</body>
+</html>
