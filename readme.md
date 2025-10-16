@@ -1,37 +1,65 @@
-💜 Australian Modern Awards Interactive Guide
+Reflective Learning Flip Card Module
 
-This is a single-file, interactive web application designed to help new or early-career workers, particularly those in the health and community services sector, quickly understand the basics of Australian Modern Awards and their workplace entitlements.
+Project Overview
 
-It acts as an engaging, informative tool to promote confidence and awareness regarding pay, penalty rates, and working conditions.
+This single-file HTML module is designed for integration into a Learning Management System (LMS). It presents key concepts regarding Australian federal workplace relations, awards, and enterprise agreements in an interactive, reflective format.
 
-✨ Features
+The module is specifically tailored to a professional tone and uses Australian English, prompting learners in the dental or community health sector to engage with their employment rights and responsibilities.
 
-The application utilizes a clean, tabbed interface to organize complex industrial relations information into easily digestible sections:
+Key Features
 
-Why This Matters: Explains the non-negotiable reasons for understanding pay and conditions.
+Interactive Reflection: Four dual-sided flip cards encourage active reflection on compliance, compensation, and workplace culture.
 
-The Rulebook (What is an Award?): Clearly distinguishes between a Modern Award (industry-specific minimums) and the National Employment Standards (NES) (universal rights).
+Single File Deployment: Contains all HTML, CSS (via Tailwind CSS), and necessary styling within one file for easy deployment.
 
-Your Award in Action: Provides examples of relevant awards, such as the Health Professionals and Support Services Award, including a direct link to the official legal document.
+Fully Responsive: Optimized layout using a Tailwind CSS grid for excellent viewing across mobile, tablet, and desktop devices.
 
-The Benefits to You: Highlights the practical payoff of this knowledge (protection, confidence, fairness).
+Professional Branding: Utilizes a custom, clean color scheme for a distinct, branded aesthetic.
 
-🛠️ Technology Stack
+Custom Color Palette
 
-This guide is built for maximum simplicity and portability, contained entirely within a single file.
+The module is styled using the colors you provided:
 
-HTML5: For structure.
+Color Name
 
-Tailwind CSS (CDN): For fully responsive and modern styling.
+Hex Code
 
-Vanilla JavaScript: To handle the tab switching logic.
+Purpose
 
-🚀 Usage
+Deep Violet
 
-Since this is a single, self-contained HTML file, no build process or complex setup is required.
+#532A8C
 
-Clone this repository or download the modern_awards_guide.html file.
+Card Back / Main Headings / Accent Text
 
-Open the file directly in any modern web browser (e.g., Chrome, Firefox, Safari).
+Light Purple
 
-Navigate through the tabs to explore the content.
+#C3ACE8
+
+Card Front Background
+
+Light Gray
+
+#F2F2F2
+
+Page Background
+
+Sage Green
+
+#96BF78
+
+Conclusion Border Accent
+
+Usage and Structure
+
+This is a standalone web component that can be easily deployed in any environment that supports standard HTML.
+
+Save: The entire content of the Canvas should be saved as a single HTML file (e.g., index.html).
+
+Deploy: Upload the file directly to your LMS content repository or host it on a web server.
+
+Interaction: Users can click or hover over the front of the cards to reveal the reflective prompt questions on the back.
+
+Code Reference
+
+The component is built using HTML and relies on the Tailwind CSS CDN for all styling and responsive layout.
